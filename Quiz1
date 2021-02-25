@@ -1,0 +1,24 @@
+
+class Bot:
+    
+    def __init__(self, Encender, Apagar,Hablar,Dormir):
+      self.Encender=Encender
+      self.Apagar=Apagar
+      self.Hablar=Hablar
+      self.Dormir=Dormir
+      self.functions = [Encender,Apagar,Hablar,Dormir]
+      
+    def run(self):
+        self._register_actions()
+        
+   
+    def _register_actions(self):
+        self._discover_functions()
+        
+    def _discover_functions(self):
+        for i in functions:
+            if i!=Encender or i!=Apagar or i!=Hablar or i!=Dormir:
+                print("except AttributeError:")
+            obj = getattr(functions, i)
+            self.functions.append(obj)
+  
