@@ -30,7 +30,7 @@ class bot(object):
 
   def __init__(self, model):
         self.model = model
-        self.state = Off()
+        self.state = Apagado()
 
 if __name__ == "__main__":
     bot = bot()
