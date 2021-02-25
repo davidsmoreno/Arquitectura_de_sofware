@@ -1,24 +1,41 @@
 
-class Bot:
+class BotState(object):
+    name='State'
+    List1=[]
     
-    def __init__(self, Encender, Apagar,Hablar,Dormir):
-      self.Encender=Encender
-      self.Apagar=Apagar
-      self.Hablar=Hablar
-      self.Dormir=Dormir
-      self.functions = [Encender,Apagar,Hablar,Dormir]
-      
-    def run(self):
-        self._register_actions()
+    def Cambio(self,State):
+        if State.name in self.List1:
+            print("Actual",self,state.name)
+            self.__class__=State
+        else:
+            print("Actual",self,state.name)
+            
+   def __str__(self):
+        return self.name
         
-   
-    def _register_actions(self):
-        self._discover_functions()
-        
-    def _discover_functions(self):
-        for i in functions:
-            if i!=Encender or i!=Apagar or i!=Hablar or i!=Dormir:
-                print("except AttributeError:")
-            obj = getattr(functions, i)
-            self.functions.append(obj)
+class Apagado(BotState):
+    name="Apagado"
+    List1=['Encender']
+    
+class Encender(BotState):
+    name="on"
+    List1=['Apagado','Hablar','Dormir']
+class Hablar(BotState):
+    name='Hablar'
+    List1=['Apagado','Dormir']
+class Dormir(BotState):
+    List1=['Encender','Apagado']
+
+class bot(object):
+
+  def __init__(self, model):
+        self.model = model
+        # State of the computer - default is off.
+        self.state = Off()
+
+if __name__ == "__main__":
+    bot = bot()
   
+    bot.Cambio(On)
+    
+    boy.Cambio(Off)
