@@ -30,12 +30,11 @@ class bot(object):
 
   def __init__(self, model):
         self.model = model
-        # State of the computer - default is off.
         self.state = Off()
 
 if __name__ == "__main__":
     bot = bot()
   
-    bot.Cambio(On)
+    bot.Cambio(Encender)
     
-    boy.Cambio(Off)
+    boy.Cambio(Apagado)
